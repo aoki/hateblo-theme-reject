@@ -173,7 +173,11 @@ a.keyword {
     padding: 20px 0;
 }
 
+/*  import title font */
+@import "less/title_font.less";
+
 #title {
+    font-family: mplus-2p-thin;
     margin: 0;
     a {
         color: @text;
@@ -247,11 +251,25 @@ a.keyword {
 
 /* カテゴリ */
 
+.categories:before{
+    content: "tags = {";
+    &.no-categories {
+        content: ""
+    }
+}
+.categories:after{
+    content: "};";
+    &.no-categories {
+        content: ""
+    }
+}
+
 .categories {
     margin-top: 10px;
     font-size: 80%;
     a {
         color: @text-light;
+        background: #2aa198;
     }
     &.no-categories {
         margin: 0;  // カテゴリー無いとき
@@ -667,7 +685,6 @@ a.keyword {
     }
 
 }
-
 
 
 /*  import media queries */
